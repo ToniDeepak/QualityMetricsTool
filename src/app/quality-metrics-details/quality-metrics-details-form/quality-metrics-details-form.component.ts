@@ -4,7 +4,7 @@ import { QualityMetricsDetailsService } from 'src/app/shared/quality-metrics-det
 @Component({
   selector: 'app-quality-metrics-details-form',
   templateUrl: './quality-metrics-details-form.component.html',
-  styleUrls: ['./quality-metrics-details-form.component.scss']
+  styleUrls: ['./quality-metrics-details-form.component.css']
 })
 export class QualityMetricsDetailsFormComponent implements OnInit {
 

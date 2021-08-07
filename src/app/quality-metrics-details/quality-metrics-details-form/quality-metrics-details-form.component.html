@@ -1,20 +1,34 @@
-<form>
+<form #form="ngForm">
 <div class="form-group">
     <label>SPRINT NAME</label>
     <input class="form-control form-control-lg" placeholder="Sprint Name"
-    name="sprintName" #sprintName="ngModel" [(ngModel)]="service.formData.sprintName">
+    name="sprintName" #sprintName="ngModel" [(ngModel)]="service.formData.sprintName"
+    required>
 </div>
 
 <div class="form-group">
     <label>START DATE OF SPRINT</label>
     <input class="form-control form-control-lg" placeholder="Start Date Of Sprint"
-    name="sprintStartDate" #sprintStartDate="ngModel" [(ngModel)]="service.formData.sprintStartDate">
+    name="sprintStartDate" #sprintStartDate="ngModel" [(ngModel)]="service.formData.sprintStartDate"
+    required>
+</div>
+
+<div class="form-group">
+    <label>END DATE OF SPRINT</label>
+    <input class="form-control form-control-lg" placeholder="End Date Of Sprint"
+    name="sprintEndDate" #sprintEndDate="ngModel" [(ngModel)]="service.formData.sprintEndDate"
+    required>
 </div>
 
 <div class="form-group">
     <label>NG APPLICATION</label>
     <input class="form-control form-control-lg"
-    name="applicationName" #applicationName="ngModel" [(ngModel)]="service.formData.applicationName">
+    name="applicationName" #applicationName="ngModel" [(ngModel)]="service.formData.applicationName"
+    required>
 </div>
-
+<div>   
+    <div class="form-group">
+        <button class="btn btn-info btn-lg btn-block" type="submit">Generate Quality Metrics</button>
+    </div>
+</div>
 </form>
