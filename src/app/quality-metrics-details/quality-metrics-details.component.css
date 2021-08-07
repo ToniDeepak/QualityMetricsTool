@@ -1,0 +1,14 @@
+.heading {
+  position: relative;
+  font-family: "Garamond";
+  font-size: 70px !important;
+  text-shadow: white;
+  color: black;
+  font-weight: 550;
+}
+
+.logo {
+  width: 10%;
+  height: 10%;
+  mix-blend-mode: multiply;
+}
