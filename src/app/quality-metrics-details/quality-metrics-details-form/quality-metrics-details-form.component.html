@@ -8,23 +8,27 @@
 
 <div class="form-group">
     <label>START DATE OF SPRINT</label>
-    <input class="form-control form-control-lg" placeholder="Start Date Of Sprint"
-    name="sprintStartDate" #sprintStartDate="ngModel" [(ngModel)]="service.formData.sprintStartDate"
+    <input class="form-control form-control-lg" type="text" bsDatepicker placeholder="dd/mm/yyyy"
+    name="sprintStartDate" #sprintStartDate="ngModel" bsDatepicker [(ngModel)]="service.formData.sprintStartDate"
     required>
 </div>
 
 <div class="form-group">
     <label>END DATE OF SPRINT</label>
-    <input class="form-control form-control-lg" placeholder="End Date Of Sprint"
+    <input class="form-control form-control-lg" type="text" bsDatepicker placeholder="dd/mm/yyyy"
     name="sprintEndDate" #sprintEndDate="ngModel" [(ngModel)]="service.formData.sprintEndDate"
     required>
 </div>
 
 <div class="form-group">
-    <label>NG APPLICATION</label>
-    <input class="form-control form-control-lg"
+    <label for="applicationName">NG APPLICATION</label>
+    <select id="applicationName" class="form-control"
     name="applicationName" #applicationName="ngModel" [(ngModel)]="service.formData.applicationName"
     required>
+    <option value="1">IPW</option>
+    <option value="2">SAM</option>
+    <option value="3">SVR</option>
+    </select>
 </div>
 <div>   
     <div class="form-group">
