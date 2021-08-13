@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { QualityMetricsDetailModel } from 'src/app/shared/quality-metrics-details.model';
 import { QualityMetricsDetailsService } from 'src/app/shared/quality-metrics-details.service';
 
 @Component({
@@ -13,4 +15,13 @@ export class QualityMetricsDetailsFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onSubmit(form:NgForm){
+     this.service.postQualityMetricsDetails().subscribe(
+     ); 
+  }
+
+  resetForm(form:NgForm){
+    form.form.reset(form);
+    this.service.formData = new QualityMetricsDetailModel();
+  }
 }

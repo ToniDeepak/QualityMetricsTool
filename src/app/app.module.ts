@@ -7,6 +7,7 @@ import { QualityMetricsDetailsComponent } from './quality-metrics-details/qualit
 import { QualityMetricsDetailsFormComponent } from './quality-metrics-details/quality-metrics-details-form/quality-metrics-details-form.component';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     BsDatepickerModule.forRoot(),
     BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],

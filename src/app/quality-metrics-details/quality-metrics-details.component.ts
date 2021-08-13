@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { QualityMetricsDetailsService } from '../shared/quality-metrics-details.service';
 
 @Component({
   selector: 'app-quality-metrics-details',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QualityMetricsDetailsComponent implements OnInit {
 
-  constructor() { }
+  constructor(public service: QualityMetricsDetailsService) { }
 
   ngOnInit(): void {
   }

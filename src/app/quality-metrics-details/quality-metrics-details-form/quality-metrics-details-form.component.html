@@ -1,96 +1,72 @@
 <br />
 
 <div class="row">
-  <div class="col-md-4"></div>
-  <div class="col-md-4 card p-5">
-    <form #form="ngForm">
-      <div class="form-group">
-        <label>SPRINT NAME</label>
-        <input
-          class="form-control form-control-lg"
-          placeholder="Sprint Name"
-          name="sprintName"
-          #sprintName="ngModel"
-          [(ngModel)]="service.formData.sprintName"
-          required
-        />
-        <div class="alert" [hidden]="sprintName.valid || sprintName.pristine">
+    <div class="col-md-4"></div>
+    <div class="col-md-4 card p-5">
+        <form novalidate #form="ngForm" (submit)="onSubmit(form)">
+            <div class="form-group">
+                <label>SPRINT NAME</label>
+                <input class="form-control form-control-lg" placeholder="Sprint Name" name="sprintName"
+                    #sprintName="ngModel" [(ngModel)]="service.formData.sprintName" required
+                    [class.invalid]="sprintName.invalid && sprintName.touched" />
+                <!-- <div class="alert" [hidden]="sprintName.valid || sprintName.touched">
           Sprint Name is Required
-        </div>
-      </div>
+        </div> -->
+            </div>
 
-      <div class="form-group">
-        <label>START DATE OF SPRINT</label>
-        <input
-          class="form-control form-control-lg datepicker"
-          type="text"
-          bsDatepicker
-          placeholder="dd/mm/yyyy"
-          name="sprintStartDate"
-          #sprintStartDate="ngModel"
-          bsDatepicker
-          [(ngModel)]="service.formData.sprintStartDate"
-          required
-        />
-        <div
+            <div class="form-group">
+                <label>START DATE OF SPRINT</label>
+                <input class="form-control form-control-lg datepicker" type="text" bsDatepicker placeholder="mm/dd/yyyy"
+                    name="sprintStartDate" #sprintStartDate="ngModel" bsDatepicker
+                    [(ngModel)]="service.formData.sprintStartDate" required
+                    [class.invalid]="sprintStartDate.invalid && sprintStartDate.touched" />
+                <!-- <div
           class="alert"
           [hidden]="sprintStartDate.valid || sprintStartDate.pristine"
         >
           Sprint Start Date is Required
-        </div>
-      </div>
+        </div> -->
+            </div>
 
-      <div class="form-group">
-        <label>END DATE OF SPRINT</label>
-        <input
-          class="form-control form-control-lg"
-          type="text"
-          bsDatepicker
-          placeholder="dd/mm/yyyy"
-          name="sprintEndDate"
-          #sprintEndDate="ngModel"
-          [(ngModel)]="service.formData.sprintEndDate"
-          required
-        />
-        <div
+            <div class="form-group">
+                <label>END DATE OF SPRINT</label>
+                <input class="form-control form-control-lg" type="text" bsDatepicker placeholder="mm/dd/yyyy"
+                    name="sprintEndDate" #sprintEndDate="ngModel" [(ngModel)]="service.formData.sprintEndDate" required
+                    [class.invalid]="sprintEndDate.invalid && sprintEndDate.touched" />
+                <!-- <div
           class="alert alert-danger"
           [hidden]="sprintEndDate.valid || sprintEndDate.pristine"
         >
           Sprint End Date is Required
-        </div>
-      </div>
+        </div> -->
+            </div>
 
-      <div class="form-group">
-        <label for="applicationName">NG APPLICATION NAME</label><br />
-        <select
-          id="applicationName"
-          class="form-select"
-          name="applicationName"
-          required
-        >
-          <option selected>--Select--</option>
-          <option value="1">IPW</option>
-          <option value="2">SAM</option>
-          <option value="3">SVR</option>
-        </select>
-        <div
+            <div class="form-group">
+                <label for="applicationName">NG APPLICATION NAME</label><br />
+                <select id="applicationName" class="form-select" name="applicationName" required>
+                    <option selected>--Select--</option>
+                    <option value="1">IPW</option>
+                    <option value="2">SAM</option>
+                    <option value="3">SVR</option>
+                </select>
+                <!-- <div
           class="alert alert-danger"
           [hidden]="sprintEndDate.valid || sprintEndDate.pristine"
         >
           Application Name is Required
-        </div>
-      </div>
-      <br />
-      <div>
-        <div class="form-group">
-          <button class="btn btn-info btn-lg btn-block" type="submit">
-            Generate Quality Metrics
-          </button>
-        </div>
-      </div>
-    </form>
-  </div>
-  <div class="col-md-4"></div>
+        </div> -->
+            </div>
+            <br />
+            <div>
+                <div class="form-group">
+                    <button class="btn btn-info btn-lg btn-block" type="submit" [disabled]="form.invalid">
+                        Generate Quality Metrics
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-4"></div>
 </div>
 
 <br />
