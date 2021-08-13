@@ -24,3 +24,8 @@ input.invalid {
     border-color: red;
 }
 
+.btn-customstyle {
+background-color: #0d6efd;
+border-color: #0d6efd;
+}
+

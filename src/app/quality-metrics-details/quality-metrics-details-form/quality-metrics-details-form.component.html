@@ -19,7 +19,8 @@
                 <input class="form-control form-control-lg datepicker" type="text" bsDatepicker placeholder="mm/dd/yyyy"
                     name="sprintStartDate" #sprintStartDate="ngModel" bsDatepicker
                     [(ngModel)]="service.formData.sprintStartDate" required
-                    [class.invalid]="sprintStartDate.invalid && sprintStartDate.touched" />
+                    [class.invalid]="sprintStartDate.invalid && sprintStartDate.touched"
+                    [bsConfig] = "datePickerConfig" placement="right" />
                 <!-- <div
           class="alert"
           [hidden]="sprintStartDate.valid || sprintStartDate.pristine"
@@ -32,7 +33,8 @@
                 <label>END DATE OF SPRINT</label>
                 <input class="form-control form-control-lg" type="text" bsDatepicker placeholder="mm/dd/yyyy"
                     name="sprintEndDate" #sprintEndDate="ngModel" [(ngModel)]="service.formData.sprintEndDate" required
-                    [class.invalid]="sprintEndDate.invalid && sprintEndDate.touched" />
+                    [class.invalid]="sprintEndDate.invalid && sprintEndDate.touched" 
+                    [bsConfig] = "datePickerConfig" placement="right"/>
                 <!-- <div
           class="alert alert-danger"
           [hidden]="sprintEndDate.valid || sprintEndDate.pristine"
@@ -59,7 +61,7 @@
             <br />
             <div>
                 <div class="form-group">
-                    <button class="btn btn-info btn-lg btn-block" type="submit" [disabled]="form.invalid">
+                    <button class="btn btn-customstyle btn-lg btn-block" type="submit" [disabled]="form.invalid">
                         Generate Quality Metrics
                     </button>
                 </div>

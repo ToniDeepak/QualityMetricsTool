@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { QualityMetricsDetailModel } from 'src/app/shared/quality-metrics-details.model';
 import { QualityMetricsDetailsService } from 'src/app/shared/quality-metrics-details.service';
+import {BsDatepickerConfig} from 'ngx-bootstrap/datepicker';
 
 @Component({
   selector: 'app-quality-metrics-details-form',
@@ -9,8 +10,10 @@ import { QualityMetricsDetailsService } from 'src/app/shared/quality-metrics-det
   styleUrls: ['./quality-metrics-details-form.component.css']
 })
 export class QualityMetricsDetailsFormComponent implements OnInit {
-
-  constructor(public service:QualityMetricsDetailsService) { }
+datePickerConfig: Partial<BsDatepickerConfig>;
+  constructor(public service:QualityMetricsDetailsService) { 
+    this.datePickerConfig = Object.assign ({}, {containerClass: 'theme-dark-blue', showWeekNumbers: false});
+  }
 
   ngOnInit(): void {
   }
