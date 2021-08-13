@@ -45,7 +45,8 @@
 
             <div class="form-group">
                 <label for="applicationName">NG APPLICATION NAME</label><br />
-                <select id="applicationName" class="form-select" name="applicationName" required>
+                <select id="applicationName" class="form-select" name="applicationName" required
+                #applicationName="ngModel" [(ngModel)]="service.formData.applicationName">
                     <option selected>--Select--</option>
                     <option value="1">IPW</option>
                     <option value="2">SAM</option>
