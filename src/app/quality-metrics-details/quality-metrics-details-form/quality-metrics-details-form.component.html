@@ -47,7 +47,6 @@
                 <label for="applicationName">NG APPLICATION NAME</label><br />
                 <select id="applicationName" class="form-select" name="applicationName" required
                 #applicationName="ngModel" [(ngModel)]="service.formData.applicationName">
-                    <option selected>--Select--</option>
                     <option value="1">IPW</option>
                     <option value="2">SAM</option>
                     <option value="3">SVR</option>
@@ -62,7 +61,7 @@
             <br />
             <div>
                 <div class="form-group">
-                    <button class="btn btn-customstyle btn-lg btn-block" type="submit" [disabled]="form.invalid">
+                    <button class="btn btn-primary btn-block" type="submit" [disabled]="form.invalid" [ngClass]="form.invalid?'btn-secondary':'btn-primary'">
                         Generate Quality Metrics
                     </button>
                 </div>

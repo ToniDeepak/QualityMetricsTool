@@ -19,3 +19,8 @@ select {
 .card {
   border-radius: 3%;
 }
+
+.btn
+{
+  font-size: 17px;
+}
