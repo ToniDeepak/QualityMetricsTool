@@ -18,8 +18,17 @@ datePickerConfig: Partial<BsDatepickerConfig>;
   ngOnInit(): void {
   }
 
+  condition=false;
+
+  changeCondition(){
+    this.condition=true;
+  }
+
   onSubmit(form:NgForm){
      this.service.postQualityMetricsDetails().subscribe(
+       respose=>{
+         this.condition = false;
+       }
      ); 
   }
 
