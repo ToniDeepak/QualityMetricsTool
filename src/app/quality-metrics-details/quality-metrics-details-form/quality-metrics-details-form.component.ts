@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { QualityMetricsDetailModel } from 'src/app/shared/quality-metrics-details.model';
 import { QualityMetricsDetailsService } from 'src/app/shared/quality-metrics-details.service';
 import {BsDatepickerConfig} from 'ngx-bootstrap/datepicker';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-quality-metrics-details-form',
@@ -11,25 +12,29 @@ import {BsDatepickerConfig} from 'ngx-bootstrap/datepicker';
 })
 export class QualityMetricsDetailsFormComponent implements OnInit {
 datePickerConfig: Partial<BsDatepickerConfig>;
-  constructor(public service:QualityMetricsDetailsService) { 
+  constructor(public service:QualityMetricsDetailsService,public toastr: ToastrService ) { 
     this.datePickerConfig = Object.assign ({}, {containerClass: 'theme-dark-blue', showWeekNumbers: false});
   }
 
   ngOnInit(): void {
   }
 
-  condition=false;
+  isSpinnerLoading = false;
 
-  changeCondition(){
-    this.condition=true;
+  spinnerLoading(){
+    this.isSpinnerLoading=true;
   }
-
+ 
   onSubmit(form:NgForm){
      this.service.postQualityMetricsDetails().subscribe(
        respose=>{
-         this.condition = false;
-       }
-     ); 
+         this.isSpinnerLoading = false;
+         this.toastr.success('Quality Metrics generated successfully', 'Quality Metrics Tool');
+       },
+       err=>{
+         console.log(err);
+         this.isSpinnerLoading = false;
+       }); 
   }
 
   resetForm(form:NgForm){

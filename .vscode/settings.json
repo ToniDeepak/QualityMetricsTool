@@ -1,4 +1,4 @@
 {
-    "appService.defaultWebAppToDeploy": "/subscriptions/81d7b6fc-dc36-46b8-a3f9-39aaef6c509b/resourceGroups/QualityMetricsTool/providers/Microsoft.Web/sites/QualityMetricsTool",
-    "appService.deploySubpath": "dist"
+    "appService.deploySubpath": "dist",
+    "appService.defaultWebAppToDeploy": "/subscriptions/81d7b6fc-dc36-46b8-a3f9-39aaef6c509b/resourceGroups/QualityMetricsToolResourceGroup/providers/Microsoft.Web/sites/QualityMetricsToolprod"
 }
