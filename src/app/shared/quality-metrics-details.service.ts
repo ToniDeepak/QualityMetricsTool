@@ -10,7 +10,7 @@ export class QualityMetricsDetailsService {
   constructor(private http:HttpClient) { }
 
   formData: QualityMetricsDetailModel = new QualityMetricsDetailModel(); 
-  readonly baseURl = 'https://localhost:44370/api/PeerCodeReview/ExtractAndSaveReviewDetails'
+  readonly baseURl = 'http://eu50apvt133/PeerReviewExtractionService/api/PeerCodeReview/ExtractAndSaveReviewDetails'
 
   postQualityMetricsDetails(){
    return this.http.post(this.baseURl,this.formData);
